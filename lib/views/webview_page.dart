@@ -20,21 +20,10 @@ class _WebViewPageState extends State<WebViewPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: SizedBox(
-          width: MediaQuery.of(context).size.width,
-          child: Stack(
-            children: [
-              Center(
-                child: CircularProgressIndicator(
-                  valueColor: AlwaysStoppedAnimation<Color>(
-                      Theme.of(context).primaryColor),
-                ),
-              ),
-            ],
-          ),
-        ),
+    return SafeArea(
+      child: Scaffold(
+        appBar: AppBar(),
+        body: WebViewWidget(controller: _controller),
       ),
     );
   }
